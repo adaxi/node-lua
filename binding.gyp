@@ -61,7 +61,7 @@
           'OS=="linux"',
           {
             "include_dirs": [
-              "<!(find /usr/include /usr/local/include $NODELUA_INCLUDE -name lua.h | sed s/lua.h// | head -n 1)"
+              "<!(find /usr/include /usr/local/include $NODELUA_INCLUDE -name lua.h | sed s/lua.h// | tail -n 1)"
             ],
             "library_dirs": [
               "/usr/lib",
@@ -69,7 +69,7 @@
               "<!(echo $NODELUA_LIB)"
             ],
             "libraries": [
-              "<!(find /usr/include /usr/local/include $NODELUA_LIB -name libluajit-5.1.so | head -n 1)"
+              "<!(find /usr/include /usr/local/include $NODELUA_LIB -name libluajit-5.1.so | tail -n 1)"
             ],
             "actions": []
           }
